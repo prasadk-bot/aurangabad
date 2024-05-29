@@ -1514,18 +1514,16 @@ line two` ) and will not work with special characters inside of quotes ( example
                   <Button
                     iconPosition={'left'}
                     onPress={() => {
-                      const handler = async () => {
-                        try {
-                          await WebBrowser.openBrowserAsync(
-                            'https://www.nbpdcl.co.in/frmQuickBillPaymentAll.aspx'
-                          );
-                          navigation.navigate('DashboardScreen');
-                          /* hidden 'Navigate' action */
-                        } catch (err) {
-                          console.error(err);
-                        }
-                      };
-                      handler();
+                      try {
+                        /* hidden 'Open Browser' action */
+                        /* hidden 'Navigate' action */
+                        navigation.navigate('RechargeScreen', {
+                          serviceConNo: Constants['consumerScNo'],
+                          Name: consumerName,
+                        });
+                      } catch (err) {
+                        console.error(err);
+                      }
                     }}
                     style={StyleSheet.applyWidth(
                       {

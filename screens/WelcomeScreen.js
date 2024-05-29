@@ -128,8 +128,8 @@ const WelcomeScreen = props => {
                   onPress={() => {
                     try {
                       setShowNav(false);
-                      /* hidden 'Open Browser' action */
                       navigation.navigate('QuickPayScreen');
+                      /* hidden 'Open Browser' action */
                     } catch (err) {
                       console.error(err);
                     }
@@ -414,17 +414,12 @@ const WelcomeScreen = props => {
                 {/* Privacy Policy */}
                 <Touchable
                   onPress={() => {
-                    const handler = async () => {
-                      try {
-                        /* hidden 'Navigate' action */
-                        await WebBrowser.openBrowserAsync(
-                          'https://www.nbpdcl.co.in/(S(g3qjoyao45b0aohgnjpnm1de))/frmPrivacyPolicy.aspx'
-                        );
-                      } catch (err) {
-                        console.error(err);
-                      }
-                    };
-                    handler();
+                    try {
+                      navigation.navigate('PrivacyPolicyGuestScreen');
+                      /* hidden 'Open Browser' action */
+                    } catch (err) {
+                      console.error(err);
+                    }
                   }}
                 >
                   <View

@@ -139,10 +139,10 @@ export default function RootAppNavigator() {
         })}
       >
         <Stack.Screen
-          name="PaymentsScreen"
-          component={PaymentsScreen}
+          name="WelcomeScreen"
+          component={WelcomeScreen}
           options={({ navigation }) => ({
-            title: 'Payments',
+            title: 'Welcome',
           })}
         />
         <Stack.Screen
@@ -153,10 +153,10 @@ export default function RootAppNavigator() {
           })}
         />
         <Stack.Screen
-          name="UpdatePhonenumberScreen"
-          component={UpdatePhonenumberScreen}
+          name="QuickPayScreen"
+          component={QuickPayScreen}
           options={({ navigation }) => ({
-            title: 'Update Phone number',
+            title: 'Quick Pay',
           })}
         />
         <Stack.Screen
@@ -164,6 +164,27 @@ export default function RootAppNavigator() {
           component={BillingScreen}
           options={({ navigation }) => ({
             title: 'Billing',
+          })}
+        />
+        <Stack.Screen
+          name="PaymentsScreen"
+          component={PaymentsScreen}
+          options={({ navigation }) => ({
+            title: 'Payments',
+          })}
+        />
+        <Stack.Screen
+          name="DashboardScreen"
+          component={DashboardScreen}
+          options={({ navigation }) => ({
+            title: 'Dashboard',
+          })}
+        />
+        <Stack.Screen
+          name="UpdatePhonenumberScreen"
+          component={UpdatePhonenumberScreen}
+          options={({ navigation }) => ({
+            title: 'Update Phone number',
           })}
         />
         <Stack.Screen
@@ -188,24 +209,10 @@ export default function RootAppNavigator() {
           })}
         />
         <Stack.Screen
-          name="DashboardScreen"
-          component={DashboardScreen}
-          options={({ navigation }) => ({
-            title: 'Dashboard',
-          })}
-        />
-        <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
           options={({ navigation }) => ({
             title: 'Login',
-          })}
-        />
-        <Stack.Screen
-          name="WelcomeScreen"
-          component={WelcomeScreen}
-          options={({ navigation }) => ({
-            title: 'Welcome',
           })}
         />
         <Stack.Screen
@@ -276,13 +283,6 @@ export default function RootAppNavigator() {
           component={UpdatePhoneandEmailScreen}
           options={({ navigation }) => ({
             title: 'Update Phone and Email',
-          })}
-        />
-        <Stack.Screen
-          name="QuickPayScreen"
-          component={QuickPayScreen}
-          options={({ navigation }) => ({
-            title: 'Quick Pay',
           })}
         />
         <Stack.Screen

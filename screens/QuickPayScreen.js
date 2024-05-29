@@ -391,10 +391,13 @@ line two` ) and will not work with special characters inside of quotes ( example
               onPress={() => {
                 try {
                   console.log(textInputValue);
-                  navigation.navigate('QAScreen', { val: textInputValue });
+                  /* hidden 'Navigate' action */
                   /* hidden 'Open Browser' action */
                   /* hidden 'Navigate' action */
-                  /* hidden 'Navigate' action */
+                  navigation.navigate('RechargeGuestScreen', {
+                    serviceConNo: consumerScNo,
+                    Name: consumerName,
+                  });
                 } catch (err) {
                   console.error(err);
                 }
