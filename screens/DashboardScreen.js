@@ -715,17 +715,12 @@ line two` ) and will not work with special characters inside of quotes ( example
                 {/* Privacy Policy */}
                 <Touchable
                   onPress={() => {
-                    const handler = async () => {
-                      try {
-                        /* hidden 'Navigate' action */
-                        await WebBrowser.openBrowserAsync(
-                          'https://www.nbpdcl.co.in/(S(g3qjoyao45b0aohgnjpnm1de))/frmPrivacyPolicy.aspx'
-                        );
-                      } catch (err) {
-                        console.error(err);
-                      }
-                    };
-                    handler();
+                    try {
+                      navigation.navigate('PrivacyPolicyScreen');
+                      /* hidden 'Open Browser' action */
+                    } catch (err) {
+                      console.error(err);
+                    }
                   }}
                 >
                   <View

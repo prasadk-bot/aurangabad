@@ -139,6 +139,27 @@ export default function RootAppNavigator() {
         })}
       >
         <Stack.Screen
+          name="DashboardScreen"
+          component={DashboardScreen}
+          options={({ navigation }) => ({
+            title: 'Dashboard',
+          })}
+        />
+        <Stack.Screen
+          name="PaymentsScreen"
+          component={PaymentsScreen}
+          options={({ navigation }) => ({
+            title: 'Payments',
+          })}
+        />
+        <Stack.Screen
+          name="BillingScreen"
+          component={BillingScreen}
+          options={({ navigation }) => ({
+            title: 'Billing',
+          })}
+        />
+        <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
           options={({ navigation }) => ({
@@ -157,27 +178,6 @@ export default function RootAppNavigator() {
           component={QuickPayScreen}
           options={({ navigation }) => ({
             title: 'Quick Pay',
-          })}
-        />
-        <Stack.Screen
-          name="BillingScreen"
-          component={BillingScreen}
-          options={({ navigation }) => ({
-            title: 'Billing',
-          })}
-        />
-        <Stack.Screen
-          name="PaymentsScreen"
-          component={PaymentsScreen}
-          options={({ navigation }) => ({
-            title: 'Payments',
-          })}
-        />
-        <Stack.Screen
-          name="DashboardScreen"
-          component={DashboardScreen}
-          options={({ navigation }) => ({
-            title: 'Dashboard',
           })}
         />
         <Stack.Screen
