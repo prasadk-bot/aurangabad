@@ -267,19 +267,28 @@ line two` ) and will not work with special characters inside of quotes ( example
         console.log('Start ON_SCREEN_FOCUS:23 SET_VARIABLE');
         setAvailableBalance(availableBalance);
         console.log('Complete ON_SCREEN_FOCUS:23 SET_VARIABLE');
-        console.log('Start ON_SCREEN_FOCUS:24 FETCH_REQUEST');
-        const RechargeHistoryJson = (
-          await CISAPPApi.rechargeHistoryDetailsPOST(Constants, {
-            action: (() => {
-              const e = rechargeHistoryBuildString(meterNo);
-              console.log(e);
-              return e;
-            })(),
-          })
-        )?.json;
-        console.log('Complete ON_SCREEN_FOCUS:24 FETCH_REQUEST', {
-          RechargeHistoryJson,
-        });
+        const RechargeHistoryJson = await (async () => {
+          console.log('Start ON_SCREEN_FOCUS:24 FETCH_REQUEST');
+          if (prepaidFlag === 'Y') {
+            const __result = (
+              await CISAPPApi.rechargeHistoryDetailsPOST(Constants, {
+                action: (() => {
+                  const e = rechargeHistoryBuildString(meterNo);
+                  console.log(e);
+                  return e;
+                })(),
+              })
+            )?.json;
+            console.log('Complete ON_SCREEN_FOCUS:24 FETCH_REQUEST', {
+              RechargeHistoryJson,
+            });
+            return __result;
+          } else {
+            console.log(
+              'Skipped ON_SCREEN_FOCUS:24 FETCH_REQUEST: condition not met'
+            );
+          }
+        })();
         console.log('Start ON_SCREEN_FOCUS:25 CUSTOM_FUNCTION');
         rechargeHistoryBuildString(meterNo);
         console.log('Complete ON_SCREEN_FOCUS:25 CUSTOM_FUNCTION');

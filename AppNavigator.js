@@ -139,6 +139,20 @@ export default function RootAppNavigator() {
         })}
       >
         <Stack.Screen
+          name="PaymentsScreen"
+          component={PaymentsScreen}
+          options={({ navigation }) => ({
+            title: 'Payments',
+          })}
+        />
+        <Stack.Screen
+          name="UsageScreen"
+          component={UsageScreen}
+          options={({ navigation }) => ({
+            title: 'Usage',
+          })}
+        />
+        <Stack.Screen
           name="UpdatePhonenumberScreen"
           component={UpdatePhonenumberScreen}
           options={({ navigation }) => ({
@@ -150,13 +164,6 @@ export default function RootAppNavigator() {
           component={BillingScreen}
           options={({ navigation }) => ({
             title: 'Billing',
-          })}
-        />
-        <Stack.Screen
-          name="PaymentsScreen"
-          component={PaymentsScreen}
-          options={({ navigation }) => ({
-            title: 'Payments',
           })}
         />
         <Stack.Screen
@@ -178,13 +185,6 @@ export default function RootAppNavigator() {
           component={NSCRegistrationGuestScreen}
           options={({ navigation }) => ({
             title: 'NSC Registration Guest',
-          })}
-        />
-        <Stack.Screen
-          name="UsageScreen"
-          component={UsageScreen}
-          options={({ navigation }) => ({
-            title: 'Usage',
           })}
         />
         <Stack.Screen
